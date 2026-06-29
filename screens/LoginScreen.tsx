@@ -36,7 +36,7 @@ export default function LoginScreen() {
           activeOpacity={0.7}
           onPress={() => {
             console.log('Button Pressed');
-            navigation.navigate('LandingPage');
+            navigation.navigate('Home');
           }}
         >
           <Text style={styles.buttonText}>Login</Text>
