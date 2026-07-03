@@ -11,6 +11,7 @@ import Journal from './screens/Tabs/Journal';
 import Profile from './screens/Tabs/Profile';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import {Image} from 'react-native';
+import CustomNavBar from './Components/CustomNavBar';
 
 
 
@@ -30,12 +31,12 @@ function RootStack() {
 
 const TabNavigator = () => {
   return (
-    <Tab.Navigator initialRouteName="Home" >
-      <Tab.Screen name="Home" component={Home} options={{tabBarIcon: ({focused}) => (<Image source={require('./Images/home.png')} style={{height: 30, width: 30}}/>)}} />
-      <Tab.Screen name="Journal" component={Journal}options={{tabBarIcon: ({focused}) => (<Image source={require('./Images/home.png')} style={{height: 30, width: 30}}/>)}} />
-      <Tab.Screen name="Add" component={Add} options={{tabBarIcon: ({focused}) => (<Image source={require('./Images/home.png')} style={{height: 30, width: 30}}/>)}} />
-      <Tab.Screen name="Analytics" component={Analytics} options={{tabBarIcon: ({focused}) => (<Image source={require('./Images/home.png')} style={{height: 30, width: 30}}/>)}} />
-      <Tab.Screen name="Profile" component={Profile} options={{tabBarIcon: ({focused}) => (<Image source={require('./Images/home.png')} style={{height: 30, width: 30}}/>)}} />
+    <Tab.Navigator initialRouteName="Home" tabBar={(props) => <CustomNavBar {...props} />}>
+      <Tab.Screen name="Home" component={Home} options={{tabBarIcon: ({focused}) => (<Image source={require('./Images/home.png')} style={{height: 30, width: 30}}/>) ,headerShown: false}} />
+      <Tab.Screen name="Journal" component={Journal}options={{tabBarIcon: ({focused}) => (<Image source={require('./Images/home.png')} style={{height: 30, width: 30}}/>) ,headerShown: false}} />
+      <Tab.Screen name="Add" component={Add} options={{tabBarIcon: ({focused}) => (<Image source={require('./Images/home.png')} style={{height: 30, width: 30}}/>) ,headerShown: false}} />
+      <Tab.Screen name="Analytics" component={Analytics} options={{tabBarIcon: ({focused}) => (<Image source={require('./Images/home.png')} style={{height: 30, width: 30}}/>) ,headerShown: false}} />
+      <Tab.Screen name="Profile" component={Profile} options={{tabBarIcon: ({focused}) => (<Image source={require('./Images/home.png')} style={{height: 30, width: 30}}/>) ,headerShown: false}} />
     </Tab.Navigator>
   );
 }
