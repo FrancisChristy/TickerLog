@@ -12,7 +12,8 @@ import {
 } from 'lucide-react-native';
 
 const PRIMARY_COLOR = '#a3e6cd';
-const SECONDARY_COLOR = '#b8794a';
+const SECONDARY_COLOR = '#eeeae8';
+const TEXT_COLOR = '#10b981';
 
 const CustomNavBar: React.FC<BottomTabBarProps> = ({
   state,
@@ -63,7 +64,7 @@ const CustomNavBar: React.FC<BottomTabBarProps> = ({
             testID={options.tabBarButtonTestID}
             onPress={onPress}
             onLongPress={onLongPress}
-            style={[styles.tabItem, { backgroundColor: isFocused ? SECONDARY_COLOR : 'transparent' }]}
+            style={[styles.tabItem, { backgroundColor: isFocused ? '#fdf9f9' : 'transparent' }]}
           >
             {getIconByRouteName(route.name, isFocused ? PRIMARY_COLOR : SECONDARY_COLOR)}
             {isFocused && <Text style={styles.text}>{label as string}</Text>}
@@ -146,7 +147,7 @@ const styles = StyleSheet.create({
     borderRadius: 20,
   },
   text: {
-    color: PRIMARY_COLOR,
+    color: TEXT_COLOR,
     marginLeft: 8,
     fontWeight: '500',
   },
